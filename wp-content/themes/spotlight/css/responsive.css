@@ -1,0 +1,279 @@
+/* Smartphones (landscape) ----------- */
+@media only screen and (min-width : 321px) {
+	
+}
+
+/* Smartphones (portrait) ----------- */
+@media only screen and (max-width : 320px) {
+/* Styles */
+}
+
+/* iPads (portrait and landscape) ----------- */
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) {	
+}
+
+/* iPads (landscape) ----------- */
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : landscape) {
+/* Styles */
+}
+
+/* iPads (portrait) ----------- */
+@media only screen and (max-width : 1024px) {	
+	.sc_image.sc_image_align_left {
+		float: none;
+		width: auto;
+		text-align: center;
+		margin: 0 0 20px 0 !important;
+	}
+	.responsive_indent {
+		padding-bottom: 50px;
+	}
+}
+/**********
+iPad 3
+**********/
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : landscape) and (-webkit-min-device-pixel-ratio : 2) {
+/* Styles */
+}
+
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : portrait) and (-webkit-min-device-pixel-ratio : 2) {
+/* Styles */
+}
+/* Desktops and laptops ----------- */
+@media only screen  and (max-width : 1120px) {
+	.main.with_sidebar.show_top_news > .content {
+		width: 450px;
+	}
+	#sidebar_main {
+		width: 300px;
+	}
+}
+@media only screen  and (max-width : 1024px) {
+	.tabPortraitShow {
+		display: block;
+	}
+	.section_2.section_alignment_center .searchform {
+		bottom: 20px;
+	}
+	.blog_style_portfolio .isotopeElement.appended .post_thumb {
+		margin-right: 30px;
+	}
+	.blog_style_portfolio article.isotopeElement,
+	.blog_style_portfolio article.isotopeElement a {
+		height: 150px;
+	}
+	.section_2 .header_banner_wrap,
+	.section_2 .logo_column {
+		text-align: center;
+		float: none;
+		clear: both;
+		width: auto;
+	}
+	.section_2 .logo_column {
+		margin-bottom: 20px;
+	}
+	#mainmenu {
+		display: inline-block;
+	}
+	.section_2 .menu_column {
+		float: none;
+		width: auto;
+	}
+	.section_2 .header_banner_wrap {
+		margin-top: 0;
+	}
+	#sitename {
+		display: inline-block;
+	}
+	.menuMainWrap {
+		text-align: center;
+	}
+	form.comment-form .comment_form_column,
+	form.comment-form .comment_form_column + .message {
+		width: 40%;
+	}
+	#sidebar_main {
+		width: 28%;
+		padding: 40px 20px;
+	}
+	.main.with_sidebar > .content,
+	.main.with_sidebar.show_top_news > .content {
+		margin-right: 6% !important;
+		width: 66% !important;
+	}
+	.top_news_section {
+		clear: both;
+	}
+	.sc_section {
+		background-image: none !important;
+	}
+}
+
+/* Large screens ----------- */
+@media only screen and (max-width : 1160px) {	
+	.iso_columns_2_sidebar,
+	.iso_columns_3 {
+		width: 30%;
+		margin-right: 3%;
+	}
+	.iso_columns_2 {
+		width: 47%;
+		margin-right: 3%;
+	}
+	.slider_wrap .sc_slider_swiper {
+		width: 70%;
+	}
+	.slider_wrap .flex-control-nav {
+		width: 30%;
+	}
+}
+@media only screen and (max-width : 768px) {
+	.header_services_block {
+		text-align: center;
+		float: none;
+	}
+	.iso_columns_2 {
+		width: 100%;
+	}
+	.header_services_block.vis {
+		text-indent: 110px;
+	}
+	.searchform {
+		left: 50%;
+		margin-left: -128px;
+	}
+	.section_2.banner_disabled.section_alignment_left .searchform {
+		bottom: 2px;
+	}
+	.header_services_block a.show_mobile_menu {
+		display: inline-block;
+	}
+	.blog_style_portfolio .isotopeElement.appended .post_thumb {
+		width: 100%;
+		margin: 0 0 30px 0;
+		float: none;
+	}
+	.prev_next_posts .prev_post_link .link_post_name,
+	.prev_next_posts .next_post_link .link_post_name {
+		display: none;
+	}
+	.prev_next_posts .prev_post_link a:hover .link_label,
+	.prev_next_posts .next_post_link a:hover .link_label {
+		text-indent: 0;
+	}
+	.single .post .reviewBlock {
+		width: auto;
+		float: none;
+		margin: 0 0 20px 0;
+	}
+	.iso_columns_2_sidebar,
+	.iso_columns_3 {
+		width: 100%;
+		margin-right: 0;
+	}
+	.columnsWrap div.columns1_6,
+	.columnsWrap div.columns2_6,
+	.columnsWrap div.columns3_6,
+	.columnsWrap div.columns4_6,
+	.columnsWrap div.columns5_6,
+	.columnsWrap div.columns1_5,
+	.columnsWrap div.columns2_5,
+	.columnsWrap div.columns3_5,
+	.columnsWrap div.columns4_5,
+	.columnsWrap div.columns1_4,
+	.columnsWrap div.columns2_4,
+	.columnsWrap div.columns3_4,
+	.columnsWrap div.columns1_3,
+	.columnsWrap div.columns2_3,
+	.columnsWrap div.columns1_2 {
+		width: 96.5517%;
+		margin-bottom: 30px;
+	}
+	.columnsWrap div.columns1_4 {
+		width: 46.5517%;
+	}
+	.footerWrap .columnsWrap div.columns1_4 {
+		min-height: 360px;
+	}
+	#sidebar_main {
+		width: 28%;
+		padding: 40px 20px;
+	}
+	.main.with_sidebar > .content,
+	.main.with_sidebar.show_top_news > .content {
+		margin-right: 6%;
+		width: 66%;
+	}	
+	.main.with_sidebar > .content,
+	.main.with_sidebar.show_top_news > .content {
+		float: none;
+		width: auto;
+	}
+	#sidebar_main {
+		float: none;
+		width: auto;
+		padding: 40px;
+	}
+	#page {
+		min-width: 320px;
+		width: 100%;
+		max-width: 450px;
+		margin: 0 auto;
+	}
+	.sc_slider_flex .sc_slider_info .sc_slider_subtitle, 
+	.sc_slider_swiper .sc_slider_info .sc_slider_subtitle {
+		font-size: 24px;
+		line-height: 30px;
+	}
+	.blog_style_portfolio article.isotopeElement,
+	.blog_style_portfolio article.isotopeElement a {
+		height: 100px;
+	}
+	.slider_wrap .sc_slider_swiper + .flex-control-nav ul li .post_thumb {
+		margin: 0 10px 0 0;
+	}
+	.slider_wrap .sc_slider_swiper + .flex-control-nav ul li {
+		padding: 9px 10px 13px 8px;
+	}
+	.slider_wrap .sc_slider_swiper + .flex-control-nav ul li h4 {
+		font-size: 14px;
+		line-height: 20px;
+	}
+}
+/* Smartphones (portrait and landscape) ----------- */
+@media only screen and (max-width : 480px) {
+
+	.slider_wrap .sc_slider_swiper {
+		width: 100%;
+	}
+	.slider_wrap .flex-control-nav {
+		width: 100%;
+	}
+	.sc_testimonials .flex-direction-nav {display: none;}
+	section.author.single .section_inner .author_info {
+		width: auto;
+		float: none;
+		margin-bottom: 10px;
+	}
+	.sc_testimonials .sc_testimonials_item_content {
+		padding: 0;
+	}
+	form.comment-form .comment_form_column,
+	form.comment-form .comment_form_column + .message {
+		width: 90%;
+	}
+
+	.columnsWrap div.columns1_4 {
+		width: 96.5517%;
+		margin-bottom: 30px;
+	}
+}
+
+/* iPhone 4 ----------- */
+@media only screen and (min-device-width : 320px) and (max-device-width : 480px) and (orientation : landscape) and (-webkit-min-device-pixel-ratio : 2) {
+/* Styles */
+}
+
+@media only screen and (min-device-width : 320px) and (max-device-width : 480px) and (orientation : portrait) and (-webkit-min-device-pixel-ratio : 2) {
+/* Styles */
+}

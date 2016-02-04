@@ -1,0 +1,30 @@
+/* Themerex Banner Manager Front-End Styles */
+
+.trex_banner_block {
+	padding: 15px 0;
+}
+.trex_banner_block,
+.trex_banner_block .banner_inner {
+	max-width: 100%;
+}
+.trex_banner_block .banner_inner {
+	overflow: hidden;
+	position: relative;
+}
+.trex_banner_block .banner_inner .banner_hover {
+	-moz-transition: all ease .2s;
+	-ms-transition: all ease .2s;
+	-o-transition: all ease .2s;
+	-webkit-transition: all ease .2s;
+	bottom: 0;
+	left: 0;
+	opacity: 0;
+	position: absolute;
+	right: 0;
+	top: 0;
+	transition: all ease .2s;
+	z-index: 1;
+}
+.trex_banner_block:hover .banner_inner .banner_hover {
+	opacity: 1;
+}

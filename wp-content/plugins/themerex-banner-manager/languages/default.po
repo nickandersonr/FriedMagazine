@@ -1,0 +1,124 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Themerex Banners Manager\n"
+"POT-Creation-Date: 2014-10-14 17:20+0200\n"
+"PO-Revision-Date: 2014-10-14 17:20+0200\n"
+"Last-Translator: themerex <support@themerex.net>\n"
+"Language-Team: ThemeREX\n"
+"Language: en\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.5.7\n"
+"X-Poedit-KeywordsList: _x;gettext;gettext_noop;_e\n"
+"X-Poedit-Basepath: ../\n"
+"Plural-Forms: nplurals=2; plural=n == 1 ? 0 : 1;\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: post-type-banner.php:7
+msgid "Banners"
+msgstr ""
+
+#: post-type-banner.php:8
+msgid "Banner"
+msgstr ""
+
+#: post-type-banner.php:47
+msgid "Banner Author"
+msgstr ""
+
+#: post-type-banner.php:48
+#, fuzzy
+msgid "Author"
+msgstr "Автор"
+
+#: post-type-banner.php:74
+msgid "Banner Group"
+msgstr ""
+
+#: post-type-banner.php:75
+msgid "Group"
+msgstr ""
+
+#: widget-themerex-banners.php:86
+msgid "Title:"
+msgstr ""
+
+#: widget-themerex-banners.php:89
+msgid "Banners Count:"
+msgstr ""
+
+#: widget-themerex-banners.php:92
+msgid "Banner Ids:"
+msgstr ""
+
+#: widget-themerex-banners.php:97
+msgid "Banners Group:"
+msgstr ""
+
+#: widget-themerex-banners.php:109
+msgid "Banners Author:"
+msgstr ""
+
+#~ msgid "Comments are closed."
+#~ msgstr "Комментарии закрыты"
+
+#~ msgid "Leave a comment"
+#~ msgstr "Кинь \"коммент\""
+
+#, fuzzy
+#~ msgid "Post meta"
+#~ msgstr "Опубликовано "
+
+#, fuzzy
+#~ msgid "Assign Authors"
+#~ msgstr "Автор"
+
+#~ msgid "Next"
+#~ msgstr "Следующий"
+
+#, fuzzy
+#~ msgid "Next page"
+#~ msgstr "Следующий"
+
+#~ msgid "Pages:"
+#~ msgstr "\"Страницы:\""
+
+#, fuzzy
+#~ msgid "Previous page"
+#~ msgstr "Предыдущий"
+
+#, fuzzy
+#~ msgid "Audio author"
+#~ msgstr "Автор"
+
+#, fuzzy
+#~ msgid "Post id"
+#~ msgstr "Опубликовано "
+
+#, fuzzy
+#~ msgid "Comments - %s"
+#~ msgstr "Комментарии закрыты"
+
+#, fuzzy
+#~ msgid "Previous item"
+#~ msgstr "Предыдущий"
+
+#, fuzzy
+#~ msgid "Next item"
+#~ msgstr "Следующий"
+
+#~ msgid "Posted "
+#~ msgstr "Опубликовано "
+
+#, fuzzy
+#~ msgid "Previous Post"
+#~ msgstr "Предыдущий"
+
+#, fuzzy
+#~ msgid "Next Post"
+#~ msgstr "Следующий"
+
+#~ msgid "Users"
+#~ msgstr "Посетители"

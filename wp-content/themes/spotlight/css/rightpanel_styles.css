@@ -1,0 +1,393 @@
+
+.swpRightPos {
+  background: #fff;
+  z-index: 10000;
+  border-bottom: 1px solid #f2f2f2;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: -263px;
+  width: 263px;
+  -webkit-box-shadow: -4px 0 0 rgba(0, 0, 0, 0);
+  -moz-box-shadow: -4px 0 0 rgba(0, 0, 0, 0);
+  -ms-box-shadow: -4px 0 0 rgba(0, 0, 0, 0);
+  box-shadow: -4px 0 0 rgba(0, 0, 0, 0);
+  padding-bottom: 46px;
+  -webkit-transition: all 1s ease;
+  -moz-transition: all 1s ease;
+  -ms-transition: all 1s ease;
+  -o-transition: all 1s ease;
+  transition: all 1s ease;
+}
+.admin-bar .swpRightPos {
+  top: 32px;
+}
+.swpRightPos.vis {
+  right: 0;
+  -webkit-box-shadow: -4px 0 0 rgba(0, 0, 0, 0.03);
+  -moz-box-shadow: -4px 0 0 rgba(0, 0, 0, 0.03);
+  -ms-box-shadow: -4px 0 0 rgba(0, 0, 0, 0.03);
+  box-shadow: -4px 0 0 rgba(0, 0, 0, 0.03);
+}
+.swpRightPos .sc_tabs {
+  margin-bottom: 0;
+  border: none;
+}
+.swpRightPos .sc_tabs .tabsMenuHead {
+  padding: 3px 1px 1px 0;
+  float: left;
+  width: 42px;
+  margin: 40px 0 0 -43px;
+  background: #fff;
+  -webkit-box-shadow: -4px 0 0 rgba(0, 0, 0, 0.03);
+  -moz-box-shadow: -4px 0 0 rgba(0, 0, 0, 0.03);
+  -ms-box-shadow: -4px 0 0 rgba(0, 0, 0, 0.03);
+  box-shadow: -4px 0 0 rgba(0, 0, 0, 0.03);
+}
+.swpRightPos .sc_tabs .ui-tabs-panel {
+  overflow: hidden;
+}
+.swpRightPos .sc_tabs .tabsMenuHead li {
+  list-style: none;
+}
+.swpRightPos .sc_tabs .tabsMenuHead li a {
+  display: block;
+  font-size: 14px;
+  line-height: 17px;
+  padding: 11px 0 12px;
+  text-align: center;
+  color: #d0d0d0;
+}
+.swpRightPos .sc_tabs .tabsMenuHead li.ui-tabs-active a,
+.swpRightPos .sc_tabs .tabsMenuHead li a:hover {
+  color: #4f99bc;
+}
+.swpRightPos .sc_tabs .sc_scroll_wrapper {
+  overflow: hidden;
+}
+.swpRightPos .searchBlock {
+  padding-top: 30px;
+}
+.swpRightPos .addBookmarkArea {
+  height: 52px;
+  padding-top: 20px;
+}
+.swpRightPos .addBookmark {
+  display: block;
+  margin: 0 30px;
+  text-align: center;
+  background: #fafafa;
+  color: #c5c5c5;
+  border: 1px solid #dcdcdc;
+  height: 42px;
+  line-height: 42px;
+  -webkit-transition: all 0.2s ease;
+  -moz-transition: all 0.2s ease;
+  -ms-transition: all 0.2s ease;
+  -o-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+}
+.swpRightPos .addBookmark i {
+  margin-right: 10px;
+}
+.swpRightPos .addBookmark:hover {
+  color: #4e5762;
+}
+.swpRightPos .addBookmark:hover i {
+  color: #4f99bc;
+}
+.swpRightPos .listBookmarks {
+  padding-left: 0;
+  color: #4e5762;
+  margin: 0;
+}
+.swpRightPos .listBookmarks li {
+  position: relative;
+  padding: 7px 30px 8px;
+}
+.swpRightPos .listBookmarks li .bm_num {
+  float: left;
+  margin-right: 10px;
+}
+.swpRightPos .listBookmarks li:hover {
+  background: #fafafa;
+}
+.swpRightPos .listBookmarks li a {
+  color: inherit;
+}
+.swpRightPos .listBookmarks li a.bm_page_name {
+  display: block;
+  overflow: hidden;
+}
+.swpRightPos .listBookmarks li:hover a {
+  color: #4f99bc;
+}
+.swpRightPos .listBookmarks li a.delBookmark {
+  position: absolute;
+  color: #717b88;
+  font-size: 14px;
+  line-height: 20px;
+  right: 11px;
+  top: 8px;
+}
+#tabsMenu {
+  padding-top: 36px;
+}
+.swpRightPos .right_panel_logo {
+  text-align: center;
+}
+.swpRightPos .right_panel_logo img {
+  max-width: 141px;
+}
+.swpRightPos .site_tagline_panel {
+  padding-top: 2px;
+  text-align: center;
+  font-size: 7px;
+  line-height: 12px;
+  text-transform: uppercase;
+  color: #2f3a47;
+}
+#custom_options_scroll {
+  height: 340px;
+  position: relative;
+}
+.right_panel_overlay,
+.mfp-bg {
+  cursor: pointer;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 9999;
+  background: rgba(0, 0, 0, 0.2) !important;
+}
+#panelmenu,
+#mainmenu.leftFixed {
+  padding-top: 28px;
+}
+#panelmenu li,
+#mainmenu.leftFixed li {
+  margin-bottom: 2px;
+  display: block !important;
+  position: relative;
+}
+#mainmenu.leftFixed li a span {
+  display: block;
+  position: absolute;
+  top: 6px;
+  right: 12px;
+}
+#panelmenu li a,
+#mainmenu.leftFixed li a {
+  position: relative;
+  color: #2f3a47;
+}
+#panelmenu > li > a,
+#mainmenu.leftFixed > li > a {
+  font-size: 16px;
+  line-height: 20px;
+  display: block;
+  padding: 6px 30px 7px;
+}
+#panelmenu li a:hover,
+#mainmenu.leftFixed li a:hover {
+  background: #fafafa;
+  color: #4f99bc;
+}
+#panelmenu li ul,
+#mainmenu.leftFixed li ul {
+  background: none !important;
+  position: relative;
+  left: 0;
+  display: none;
+  margin-top: 2px;
+}
+#panelmenu ul li + li,
+#mainmenu.leftFixed ul li + li {
+  margin-top: 1px;
+}
+#panelmenu ul li > a,
+#mainmenu.leftFixed ul li > a {
+  display: block;
+  font-size: 14px;
+  line-height: 17px;
+  text-indent: 20px;
+  padding: 8px 30px 8px;
+}
+#panelmenu li a span {
+  text-indent: 0;
+  position: absolute;
+  right: 29px;
+  top: 12px;
+  font-size: 10px;
+  line-height: 12px;
+  color: #9cabbd;
+  -webkit-transform: rotate(-90deg);
+  -moz-transform: rotate(-90deg);
+  -ms-transform: rotate(-90deg);
+  -o-transform: rotate(-90deg);
+  transform: rotate(-90deg);
+}
+#panelmenu li.dropOpen > a span {
+  -webkit-transform: rotate(0);
+  -moz-transform: rotate(0);
+  -ms-transform: rotate(0);
+  -o-transform: rotate(0);
+  transform: rotate(0);
+}
+#panelmenu ul li > a:hover,
+#panelmenu ul li.sfHover > a {
+  background: #fafafa;
+  color: #4f99bc;
+}
+.co_options .co_form_row.images {
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.co_options .co_form_row + .co_form_row {
+  border-top: 1px solid #dee3eb;
+}
+.co_options .co_form_row .co_label {
+  text-align: center;
+  font-size: 14px;
+  line-height: 17px;
+  text-transform: uppercase;
+  color: #5b5c5e;
+  display: block;
+}
+.co_options .co_form_row .co_label.co_inline {
+  display: inline;
+  vertical-align: middle;
+  line-height: 20px;
+}
+.co_options .co_form_row .iColorPicker {
+  display: block;
+  width: 21px;
+  cursor: pointer;
+  height: 21px;
+}
+.co_options .co_form_row .co_form_subrow {
+  text-align: center;
+  padding: 28px 20px 30px;
+}
+.co_options .co_form_row .co_picker_wrap {
+  padding: 2px;
+  display: inline-block;
+  position: relative;
+  vertical-align: middle;
+  margin-right: 6px;
+}
+.co_options .co_form_row .iColorPicker:before {
+  content: "";
+  margin-left: -2px;
+  margin-top: -2px;
+  width: 26px;
+  height: 25px;
+  display: inline-block;
+  background: url(images/colorpicker.png) 0 0 no-repeat;
+  position: relative;
+  z-index: 99;
+}
+.co_options .co_form_row .iColorPicker:after {
+  right: -5px;
+  bottom: 0;
+  position: absolute;
+  display: block;
+  background: #fff;
+  width: 14px;
+  height: 18px;
+  -webkit-transform: skew(-45deg);
+  -moz-transform: skew(-45deg);
+  -ms-transform: skew(-45deg);
+  -o-transform: skew(-45deg);
+  transform: skew(-45deg);
+  content: "";
+  z-index: 10;
+}
+.co_options .co_form_row .co_switch_box {
+  padding-top: 17px;
+  text-align: center;
+  margin-bottom: 30px;
+}
+.co_options .co_form_row .co_switch_box a {
+  display: inline-block;
+  width: 83px;
+  height: 28px;
+  text-align: center;
+  color: #a7a9ac;
+  border: 1px solid #c0c2c5;
+  border-collapse: collapse;
+  font-size: 12px;
+  line-height: 28px;
+  text-transform: uppercase;
+}
+.co_options .co_form_row .co_switch_box .active {
+  color: #fff;
+  background: #c0c2c5;
+}
+#co_bg_pattern_list {
+  padding: 0 50px;
+  text-align: center;
+}
+#co_bg_pattern_list a {
+  border: 1px solid #c0c2c5;
+  margin: 0 2px;
+}
+.co_options .co_form_row.patterns {
+  padding: 26px 0;
+}
+.co_options .co_form_row.patterns .co_label {
+  margin-bottom: 17px;
+}
+#co_bg_images_list {
+  padding: 0 28px 0 19px;
+  overflow: hidden;
+}
+#co_bg_images_list a {
+  width: 63px;
+  height: 37px;
+  float: left;
+  overflow: hidden;
+  margin: 0 0 10px 9px;
+}
+#co_bg_images_list a img {
+  width: 100%;
+  height: auto;
+}
+.co_options .co_form_row.images {
+  padding: 26px 0;
+}
+.co_options .co_form_row.images .co_label {
+  margin-bottom: 17px;
+}
+.co_options .co_form_row.reset {
+  text-align: center;
+  padding: 26px 0;
+}
+#co_theme_reset {
+  font-size: 14px;
+  line-height: 29px;
+  color: #434242;
+}
+#co_theme_reset i {
+  vertical-align: top;
+  font-size: 19px;
+  -webkit-transition: all 0.2s ease;
+  -moz-transition: all 0.2s ease;
+  -ms-transition: all 0.2s ease;
+  -o-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+}
+#co_theme_reset:hover i {
+  color: #c0c2c5;
+}
+#custom_options .co_header {
+  padding-top: 36px;
+  text-align: center;
+}
+#custom_options .co_header .co_title {
+  font-size: 18px;
+  line-height: 22px;
+  text-transform: uppercase;
+}
