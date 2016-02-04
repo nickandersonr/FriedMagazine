@@ -1,0 +1,1 @@
+[04-Jan-2016 18:54:18 UTC] PHP Fatal error:  Call to undefined function get_header() in /home/friendamerican/public_html/wp-content/themes/twentythirteen/404.php on line 10
