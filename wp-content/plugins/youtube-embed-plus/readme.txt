@@ -3,8 +3,8 @@ Contributors: embedplus
 Plugin Name: YouTube Embed
 Tags: youtube channel, video gallery, youtube galleries, channel gallery, gallery, playlist gallery, youtube gallery, accessibility, analytics, api, blocked youtube videos, cache, caching, channel, deleted youtube videos, effects, embed youtube, embedding youtube, featured image, get_locale, i18n, internationalization, l10n, language, lazy, lazy load, locale, localization, mute, no-cookie, oembed, page speed, playlist, playlists, plugin, Reddit, responsive, seo, short code, shortcode, ssl, subtitles, thumbnail, thumbnail image, thumbnails, tinymce, translate, translator, video, video analytics, video plugin, video seo, video shortcode, video thumbnails, view count, volume, widget, wordpress security, wordpress youtube embed, youtube, youtube api, youtube analytics, youtube embed, youtube impressions, youtube player, youtube playlist, youtube plugin, youtube shortcode, youtube snippets, youtube takedowns, youtube thumbnails, youtube plugin migration
 Requires at least: 3.3
-Tested up to: 4.2
-Stable tag: 10.5
+Tested up to: 4.4
+Stable tag: 11.0.1
 License: GPLv3 or later
 
 YouTube embed plugin. Embed a responsive video, YouTube channel gallery, or playlist gallery. Add video thumbnails, analytics, SEO, caching...
@@ -146,6 +146,24 @@ You can also start and end each individual video at particular times. Like the a
 8. YouTube Embed Screenshot 8: Localization/internationalization so you can set the player's interface language
 
 == Changelog ==
+
+= YouTube Embed 11.0.1 =
+Improves HTTPS support for structured data tags, and HTTPS support in Firefox.
+
+= YouTube Embed 11.0 =
+Improves playlist and gallery embedding functionality.
+
+= YouTube Embed 10.9 =
+This version offers a host of updates: compatibility fixes, higher quality featured images, selective responsive sizing, wizard enhancements, and circular shaped thumbnails.
+
+= YouTube Embed 10.8 =
+This update improves compatibility and adds features to Free and Pro galleries.
+
+= YouTube Embed 10.7 =
+Adds legacy option.
+
+= YouTube Embed 10.6 =
+Enhanced debugging support for galleries.
 
 = YouTube Embed 10.5 =
 Enhanced gallery settings for scrolling, video titles, and thumbnail styling.

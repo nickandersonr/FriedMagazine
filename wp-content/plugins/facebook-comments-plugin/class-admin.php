@@ -11,7 +11,6 @@ function fbcomments_init(){
 	register_setting( 'fbcomments_options', 'fbcomments' );
 	$new_options = array(
 		'fbml' => 'on',
-		'old_sdk' => '',
 		'opengraph' => 'off',
 		'fbns' => 'off',
 		'html5' => 'on',
@@ -110,7 +109,6 @@ $domain = str_replace('www.', '', $domain);
 			<?php settings_fields('fbcomments_options'); ?>
 			<?php $options = get_option('fbcomments'); 
 				if (!isset($options['fbml'])) {$options['fbml'] = "";}
-				if (!isset($options['old_sdk'])) {$options['old_sdk'] = "";}
 				if (!isset($options['fbns'])) {$options['fbns'] = "";}
 				if (!isset($options['opengraph'])) {$options['opengraph'] = "";}
 				if (!isset($options['html5'])) {$options['html5'] = "";}
@@ -163,9 +161,6 @@ $domain = str_replace('www.', '', $domain);
 <?php } ?>
 				<tr valign="top"><th scope="row"><label for="fbml">Enable FBML</label></th>
 					<td><input id="fbml" name="fbcomments[fbml]" type="checkbox" value="on" <?php checked('on', $options['fbml']); ?> /> <small>only disable this if you already have XFBML enabled elsewhere</small></td>
-				</tr>
-				<tr valign="top"><th scope="row"><label for="old_sdk">Use old SDK</label></th>
-					<td><input id="old_sdk" name="fbcomments[old_sdk]" type="checkbox" value="on" <?php checked('on', $options['old_sdk']); ?> /> <small>v2.3 of Facebook's SDK has some interface changes. If you prefer to use v2.0 of the SDK tick this box.</small></td>
 				</tr>
 				<tr valign="top"><th scope="row"><label for="fbns">Use Facebook NameServer</label></th>
 					<td><input id="fbns" name="fbcomments[fbns]" type="checkbox" value="on" <?php checked('on', $options['fbml']); ?> /> <small>only enable this if Facebook Comments do not appear</small></td>

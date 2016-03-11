@@ -99,3 +99,9 @@
     height: 20px;
     background:transparent url('../images/youtubeicon16off.png') no-repeat scroll 0px 1px;
 }
+
+/* menu button */
+#toplevel_page_youtube-my-preferences > ul > li.wp-first-item
+{
+    display: none;
+}

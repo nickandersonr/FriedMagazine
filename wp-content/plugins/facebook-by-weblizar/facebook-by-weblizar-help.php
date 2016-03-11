@@ -19,6 +19,12 @@
 						</a>
 					</li>
 					<li>
+						<a id="recommendation">
+							<div class="dashicons dashicons-admin-plugins"></div><?php _e('Plugin Recommendation', WEBLIZAR_FACEBOOK_TEXT_DOMAIN);?>
+						</a>
+					</li>
+					
+					<li>
 						<a id="needhelp">
 							<div class="dashicons dashicons-editor-help"></div><?php _e('Need Help', WEBLIZAR_FACEBOOK_TEXT_DOMAIN);?>
 						</a>
@@ -26,6 +32,11 @@
 					<li>
 						<a id="ourproduct">
 							<div class="dashicons dashicons-plus"></div><?php _e('Our Products', WEBLIZAR_FACEBOOK_TEXT_DOMAIN);?>
+						</a>
+					</li>
+					<li>
+						<a id="general" href="https://wordpress.org/plugins/facebook-by-weblizar/" target="_new">
+							<div class="dashicons dashicons-star-empty"></div><?php _e('Rate Us', WEBLIZAR_FACEBOOK_TEXT_DOMAIN);?>
 						</a>
 					</li>
 				</ul>					

@@ -101,11 +101,15 @@ function powerpress_admin_posttypefeeds()
 			$edit_link = admin_url('admin.php?page=powerpress/powerpressadmin_posttypefeeds.php&amp;action=powerpress-editposttypefeed&amp;feed_slug='. $feed_slug .'&podcast_post_type='.$post_type) ;
 			
 			$url = get_post_type_archive_feed_link($post_type, $feed_slug);
-			$short_url = str_replace('http://', '', $url);
-			$short_url = str_replace('www.', '', $short_url);
-			if (strlen($short_url) > 35)
-				$short_url = substr($short_url, 0, 32).'...';
-
+			if( empty($url) ) {
+				$url = '';
+				$short_url = '';
+			} else {
+				$short_url = str_replace('http://', '', $url);
+				$short_url = str_replace('www.', '', $short_url);
+				if (strlen($short_url) > 35)
+					$short_url = substr($short_url, 0, 32).'...';
+			}
 			foreach($columns as $column_name=>$column_display_name) {
 				$class = "class=\"column-$column_name\"";
 
@@ -139,7 +143,9 @@ function powerpress_admin_posttypefeeds()
 					
 						echo "<td $class><a href='$url' title='". esc_attr(sprintf(__('Visit %s', 'powerpress'), $feed_title))."' target=\"_blank\">$short_url</a>";
 							echo '<div class="row-actions">';
-								echo '<span class="'.$action .'"><a href="http://www.feedvalidator.org/check.cgi?url='. urlencode( str_replace('&amp;', '&', $url) ) .'" target="_blank">' . __('Validate Feed', 'powerpress') . '</a></span>';
+							if( defined('POWERPRESS_FEEDVALIDATOR_URL') ) { // http://www.feedvalidator.org/check.cgi?url=
+								echo '<span class="'.$action .'"><a href="'. POWERPRESS_FEEDVALIDATOR_URL . urlencode( str_replace('&amp;', '&', $url) ) .'" target="_blank">' . __('Validate Feed', 'powerpress') . '</a></span>';
+							}
 							echo '</div>';
 						echo "</td>";
 						

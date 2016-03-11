@@ -7,7 +7,18 @@
  
 	function powerpress_get_the_excerpt_rss()
 	{
-		$output = get_the_excerpt();
+		global $post;
+		
+		if ( post_password_required() ) {
+			return __( 'There is no excerpt because this is a protected post.' );
+		}
+		$output = strip_tags($post->post_excerpt);
+		if ( $output == '') {
+			$output = strip_shortcodes( $post->post_content );
+			$output = str_replace(']]>', ']]&gt;', $output);
+			$output = strip_tags($output);
+		}
+
 		return apply_filters('the_excerpt_rss', $output);
 	}
  
@@ -35,9 +46,8 @@ echo '<?xml version="1.0" encoding="'.get_option('blog_charset').'"?'.'>'; ?>
 	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
 	<?php do_action('rss2_ns'); ?>
 >
-
 <channel>
-	<title><?php bloginfo_rss('name'); wp_title_rss(); ?></title>
+	<title><?php if( version_compare($GLOBALS['wp_version'], 4.4, '<' ) ) { bloginfo_rss('name'); } wp_title_rss(); ?></title>
 	<atom:link href="<?php self_link(); ?>" rel="self" type="application/rss+xml" />
 	<link><?php bloginfo_rss('url') ?></link>
 	<description><?php bloginfo_rss("description") ?></description>

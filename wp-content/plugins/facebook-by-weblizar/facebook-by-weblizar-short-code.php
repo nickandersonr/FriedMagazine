@@ -4,15 +4,9 @@
  */ 
 add_shortcode("FBW", "FacebookLikeBox");
 function FacebookLikeBox() {
-	
-	ob_start();
 
+	ob_start();
 	$FacebookSettings = unserialize(get_option("weblizar_facebook_shortcode_settings"));
-	//load default values OR saved values
-	$ColorScheme = 'lite';
-	if ( isset( $FacebookSettings[ 'ColorScheme' ] ) ) {
-		$ColorScheme = $FacebookSettings[ 'ColorScheme' ];
-	}
 
 	$ForceWall = 'false';
 	if ( isset( $FacebookSettings[ 'ForceWall' ] ) ) {
@@ -20,9 +14,6 @@ function FacebookLikeBox() {
 	}
 
 	$Header = 'true';
-	if ( isset( $FacebookSettings[ 'Header' ] ) ) {
-		$Header = $FacebookSettings[ 'Header' ];
-	}
 
 	$Height = 600;
 	if ( isset( $FacebookSettings[ 'Height' ] ) ) {
@@ -67,7 +58,8 @@ function FacebookLikeBox() {
 			fjs.parentNode.insertBefore(js, fjs);
 		}(document, 'script', 'facebook-jssdk'));
 	</script>
-	<div class="fb-like-box" colorscheme="<?php echo $ColorScheme; ?>" data-header="<?php echo $Header; ?>" data-height="<?php echo $Height; ?>" data-href="<?php echo $FacebookPageUrl; ?>" data-show-border="<?php echo $ShowBorder; ?>" data-show-faces="<?php echo $ShowFaces; ?>" data-stream="<?php echo $Stream; ?>" data-width="<?php echo $Width; ?>" data-force-wall="<?php echo $ForceWall; ?>"></div>
+	<div class="fb-like-box" data-height="<?php echo $Height; ?>" data-href="<?php echo $FacebookPageUrl; ?>" data-show-border="<?php echo $ShowBorder; ?>" data-show-faces="<?php echo $ShowFaces; ?>" data-stream="<?php echo $Stream; ?>" data-width="<?php echo $Width; ?>" data-force-wall="<?php echo $ForceWall; ?>"></div>
+	<div style="display:none;">Facebook By Weblizar Powered By Weblizar</div>
 	<?php
 	return ob_get_clean();
 }

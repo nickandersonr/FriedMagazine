@@ -1,0 +1,163 @@
+/*  ------------ Basics
+------------------------------------------- */
+
+#logo {
+    width: 100%;
+}
+
+p {
+    font-weight: 300;
+}
+
+/*  ------------ Overrides
+------------------------------------------- */
+
+
+body, button, input, select, textarea {
+    color: #33473d;
+    font: 400 0.83333333rem/1.5 "Lato","proxima-nova","Helvetica Neue Light","Helvetica Neue","Helvetica","Arial",sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: #33473d;
+    clear: both;
+    font: 300 2.2rem/1.5 'Lato',"Skolar","ff-tisa-web-pro","Georgia",serif;
+}
+
+
+/*  ------------ Header
+------------------------------------------- */
+
+.admin-bar .navigation-main li.home-link {
+
+}
+.navigation-main .current-menu-item.home-link > a, .navigation-main .current_page_item.home-link > a, .featured-image .navigation-main .home-link > a, body:not(.single) .home-link > a:hover {
+    color: inherit;
+}
+.navigation-main li.home-link {
+    left: 0;
+    position: static;
+    top: 0;
+}
+body:not(.single) .home-link > a {
+    text-shadow: none;
+}
+.menu-toggle, .navigation-main .widget-handle {
+    position: relative;
+    right: 24px;
+}
+.single .entry-header {
+    bottom: 1em;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    left: 0;
+    width: 100%;
+    max-width: 100%;
+    padding: 3.5em;
+    position: absolute;
+}
+.site-branding {
+    top: 1em;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    left: 0;
+    width: 100%;
+    max-width: 100%;
+    padding: 3.5em;
+    position: absolute;
+}
+.navigation-main .menu, .navigation-main .nav-menu {
+    float: left;
+    width: 95%;
+    width: -webkit-calc(100% - 1.3rem);
+    width: calc(100% - 1.3rem);
+    padding-left: 0px;
+    position: relative;
+    left: 8px;
+}
+
+
+.entry-permalink {
+    float: right;
+}
+.single .entry-permalink {
+    display: block;
+}
+
+.entry-preview .entry-permalink {
+    display: none;
+}
+
+.navigation-main a {
+    border-bottom: 5px solid transparent;
+    color: #33473d;
+    display: block;
+    text-decoration: none;
+    font-weight: 300;
+}
+
+
+/*  ------------ Home
+------------------------------------------- */
+
+
+body:not(.archive):not(.search) .hentry:first-of-type + .entry-preview, .archive .entry-preview:first-of-type, .search .entry-preview:first-of-type {
+    border-top: 0;
+    margin-top: 0;
+    padding-top: 20px;
+}
+
+.site-main,  {
+    width: 100%;
+}
+
+.home #primary #post-1 {
+    display: none;
+}
+
+.home article.entry-preview {
+    float: left;
+    width: 43%;
+    padding: 20px;
+}
+
+
+.entry-preview .featured_img {
+    display: block;
+    width: 100%;
+    height: 400px;
+}
+.entry-preview .entry-header {
+    display: inline-block;
+    max-width: 100%
+}
+.entry-preview .entry-title {
+    line-height: .8;
+}
+.entry-title, .entry-title a {
+    color: #33473d;
+    font-weight: 300;
+    font-size: 20px;
+}
+
+.entry-preview img {
+    height: 425px;
+}
+
+
+/*  ------------ Single (Post)
+------------------------------------------- */
+
+.single_home {
+    position: relative;
+    top: 40px;
+    /* left: 40px; */
+    padding: 3.5em;
+}
+
+.single_home #logo {
+    width: 30%;
+}
+

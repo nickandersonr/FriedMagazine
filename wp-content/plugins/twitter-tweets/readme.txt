@@ -1,13 +1,12 @@
-=== Tweets ===
+=== Twitter ===
 Contributors: weblizar
 Donate link: http://www.weblizar.com/
-Tags: twitter, twitter plugin, button, connect, follow button, tvet, tvett, tvit, tviter, tvitt, tweet, tweeter, twett, twit, twiter, twitter connect, tweet, twitter connect, twitter follow, twitter follow button, twitter share, twitter share button, social, button, social button, stream, tweets, twitter widget, latest tweets, add tweet, twitter shortcode, twitter button, reply, follow me, like, follow, twitter news, tweets, bitly, links, microblogging, Post, redirect, shortener, twitter, yourls, widget, plugin, wordpress twitter, twitter bootstrap, archive, integrate, integration, notify, shortcode, twitter search, twitter share, twitter share button, twitter shortcode, twitter sidebar, twitter timeline, twitter tools, twitter widget, twitter-followers, WordPress Twitter , twitter api, twitter badge, twitter button, twitter cards, twitter connect, twitter favorites, social bookmark, social bookmarking, add link to twitter, post to twitter, publish post to twitter, social media,
+Tags: twitter, twitter follow, show latest tweets, twitter share, twitter share button, tweets, twitter widget, twitter shortcode, twitter sidebar, twitter feed, twitter plugin
 Requires at least: 3.0
-Tested up to: 4.2
-Stable tag: 0.9
+Tested up to: 4.4.1
+Stable tag: 1.5.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
-
 
 Display Twitter Tweets Using Widget On WordPress Blog With Follow Button
 
@@ -31,7 +30,7 @@ Using **Twitter Tweets** widget display your least tweets on your WordPress blog
 * Add Follow Button
 * Submit Your Tweet live on your website
 * Re tweet and choose your favourite tweets
-* Auto Expand Photos in Tweets 
+* Auto Expand Photos in Tweets
 
 
 == Features ==
@@ -42,7 +41,7 @@ Using **Twitter Tweets** widget display your least tweets on your WordPress blog
 * Set Widget Height
 * Tweets URL Link Color Option
 * Show/Hide Tweets Reply
-* Auto Expand Photos in Tweets 
+* Auto Expand Photos in Tweets
 
 = Docs & Support =
 
@@ -72,10 +71,40 @@ Please use WordPress support forum to ask any query regarding any issue.
 1. Twitter Tweets Widget Preview
 2. Twitter Tweets Widget Settings
 3. Twitter Tweets Widget Preview On Site
+4. Twitter Tweets in Page
+5. Twitter Tweets in Post
 
 == Changelog ==
 
 For more information, see Weblizar(http://wwww.weblizar.com/).
+
+= 1.5.3 30-Jan-2016 =
+* Past data sanitized
+
+= 1.5.2 28-Jan-2016 =
+* Own Jquery removed
+* Own Twitter ID & Username removed
+
+= 1.5.1 27-Jan-2016 =
+* External link removed
+
+= 1.5 30-Dec-2015 =
+* small update
+
+= 1.4 10-Dec-2015 =
+* Compatible With Wordpress 4.4 version
+
+= 1.3 02-Nov-2015 =
+* Twitter Shortcode added
+
+= 1.2 19-Oct-2015 =
+* Small bug fixed
+
+= 1.1 29-Sep-2015 =
+* Compatible with wordpress 4.3.1
+
+= 1.0 25-Aug-2015 =
+* Small Updates in code
 
 = 0.9 22-Apr-2015 =
 * New: WordPress 4.2 Compatible

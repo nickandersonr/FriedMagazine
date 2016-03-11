@@ -1,8 +1,8 @@
 <?php
 /**
  * Plugin Name: Facebook By WebLizar
- * Version: 1.5
- * Description: Display your facebook page live stream & friends on WordPress blog.
+ * Version: 2.4
+ * Description: Facebook like box pluign to display facebook page live stream & friends on WordPress blog.
  * Author: WebLizar
  * Author URI: http://www.weblizar.com
  * Plugin URI: http://www.weblizar.com/plugins/
@@ -57,7 +57,7 @@ class WeblizarFacebook extends WP_Widget {
 		if (!empty($title)) {	echo $before_title . $title . $after_title;	}	
 	
         $FbAppId = apply_filters( 'facebook_app_id', $instance['FbAppId'] );
-        $ColorScheme = apply_filters( 'facebook_color_scheme', $instance['ColorScheme'] );
+        //$ColorScheme = apply_filters( 'facebook_color_scheme', $instance['ColorScheme'] );
         $ForceWall = apply_filters( 'facebook_force_wall', $instance['ForceWall'] );
         $Header = apply_filters( 'facebook_header', $instance['Header'] );
         $Height = apply_filters( 'facebook_height', $instance['Height'] );
@@ -66,7 +66,6 @@ class WeblizarFacebook extends WP_Widget {
         $ShowFaces = apply_filters( 'facebook_show_faces', $instance['ShowFaces'] );
         $Stream = apply_filters( 'facebook_stream', $instance['Stream'] );
         $Width = apply_filters( 'facebook_width', $instance['Width'] );
-
         ?>
 		<style>
 		@media (max-width:767px) {
@@ -88,14 +87,14 @@ class WeblizarFacebook extends WP_Widget {
         <div style="display:block;width:100%;float:left;overflow:hidden;margin-bottom:20px">
 			<div id="fb-root"></div>
 			<script>(function(d, s, id) {
-					var js, fjs = d.getElementsByTagName(s)[0];
-					if (d.getElementById(id)) return;
-					js = d.createElement(s); js.id = id;
-					js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&appId=<?php echo $FbAppId; ?>&version=v2.0";
-					fjs.parentNode.insertBefore(js, fjs);
-				}(document, 'script', 'facebook-jssdk'));
-			</script>
-			<div class="fb-like-box" style="background-color: auto;" colorscheme="<?php echo $ColorScheme; ?>" data-header="<?php echo $Header; ?>" data-height="<?php echo $Height; ?>" data-href="<?php echo $FacebookPageURL; ?>" data-show-border="<?php echo $ShowBorder; ?>" data-show-faces="<?php echo $ShowFaces; ?>" data-stream="<?php echo $Stream; ?>" data-width="<?php echo $Width; ?>" data-force-wall="<?php echo $ForceWall; ?>"></div>
+			  var js, fjs = d.getElementsByTagName(s)[0];
+			  if (d.getElementById(id)) return;
+			  js = d.createElement(s); js.id = id;
+			  js.src = "//connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v2.4";
+			  fjs.parentNode.insertBefore(js, fjs);
+			}(document, 'script', 'facebook-jssdk'));</script>
+			<div class="fb-like-box" style="background-color: auto;" data-small-header="<?php echo $Header; ?>" data-height="<?php echo $Height; ?>" data-href="<?php echo $FacebookPageURL; ?>" data-show-border="<?php echo $ShowBorder; ?>" data-show-faces="<?php echo $ShowFaces; ?>" data-stream="<?php echo $Stream; ?>" data-width="<?php echo $Width; ?>" data-force-wall="<?php echo $ForceWall; ?>"></div>
+			<div style="display:none;">Facebook By Weblizar Powered By Weblizar</div>
 		</div>
         <?php
 		echo $after_widget;
@@ -111,10 +110,10 @@ class WeblizarFacebook extends WP_Widget {
     public function form( $instance ) {
 
         //default values & Submitted Values
-        $ColorScheme = 'lite';
+        /* $ColorScheme = 'lite';
         if ( isset( $instance[ 'ColorScheme' ] ) ) {
             $ColorScheme = $instance[ 'ColorScheme' ];
-        }
+        } */
 
         $ForceWall = 'false';
         if ( isset( $instance[ 'ForceWall' ] ) ) {
@@ -176,20 +175,6 @@ class WeblizarFacebook extends WP_Widget {
             <label for="<?php echo $this->get_field_id( 'FacebookPageURL' ); ?>"><?php _e( 'Facebook Page URL', WEBLIZAR_FACEBOOK_TEXT_DOMAIN ); ?></label>
             <input class="widefat" id="<?php echo $this->get_field_id( 'FacebookPageURL' ); ?>" name="<?php echo $this->get_field_name( 'FacebookPageURL' ); ?>" type="text" value="<?php echo esc_attr( $FacebookPageURL ); ?>">
         </p>
-        <p>
-            <label for="<?php echo $this->get_field_id( 'ColorScheme' ); ?>"><?php _e( 'Widget Color Scheme', WEBLIZAR_FACEBOOK_TEXT_DOMAIN ); ?></label>
-            <select id="<?php echo $this->get_field_id( 'ColorScheme' ); ?>" name="<?php echo $this->get_field_name( 'ColorScheme' ); ?>">
-                <option value="light" <?php if($ColorScheme == "light") echo "selected=selected" ?>>Light Color Theme</option>
-                <option value="dark" <?php if($ColorScheme == "dark") echo "selected=selected" ?>>Dark Color Theme</option>
-            </select>
-        </p>
-        <p>
-            <label for="<?php echo $this->get_field_id( 'Header' ); ?>"><?php _e( 'Show Widget Header', WEBLIZAR_FACEBOOK_TEXT_DOMAIN ); ?></label>
-            <select id="<?php echo $this->get_field_id( 'Header' ); ?>" name="<?php echo $this->get_field_name( 'Header' ); ?>">
-                <option value="true" <?php if($Header == "true") echo "selected=selected" ?>>Yes</option>
-                <option value="false" <?php if($Header == "false") echo "selected=selected" ?>>No</option>
-            </select>
-        </p>
 		<p>
             <label for="<?php echo $this->get_field_id( 'ShowFaces' ); ?>"><?php _e( 'Show Faces', WEBLIZAR_FACEBOOK_TEXT_DOMAIN ); ?></label>
             <select id="<?php echo $this->get_field_id( 'ShowFaces' ); ?>" name="<?php echo $this->get_field_name( 'ShowFaces' ); ?>">
@@ -222,7 +207,6 @@ class WeblizarFacebook extends WP_Widget {
 		<a style="display:block;" target="_new" href="https://wordpress.org/plugins/facebook-by-weblizar/"><img src="<?php echo WEBLIZAR_FACEBOOK_PLUGIN_URL.'images/star.png' ;?>" /> </a>
 		<a href="https://wordpress.org/plugins/facebook-by-weblizar/" target="_new">Rate Us on Wordpress.org </a> 
 		</p>
-
         <?php
     }
 
@@ -240,7 +224,6 @@ class WeblizarFacebook extends WP_Widget {
         $instance = array();
         $instance['title'] = ( ! empty( $new_instance['title'] ) ) ? strip_tags( $new_instance['title'] ) : 'Tweets';
         $instance['FacebookPageURL'] = ( ! empty( $new_instance['FacebookPageURL'] ) ) ? strip_tags( $new_instance['FacebookPageURL'] ) : 'https://www.facebook.com/pages/Weblizar/1440510482872657';
-        $instance['ColorScheme'] = ( ! empty( $new_instance['ColorScheme'] ) ) ? strip_tags( $new_instance['ColorScheme'] ) : 'light';
         $instance['Header'] = ( ! empty( $new_instance['Header'] ) ) ? strip_tags( $new_instance['Header'] ) : 'true';
         $instance['Width'] = ( ! empty( $new_instance['Width'] ) ) ? strip_tags( $new_instance['Width'] ) : '292';
         $instance['Height'] = ( ! empty( $new_instance['Height'] ) ) ? strip_tags( $new_instance['Height'] ) : '560';
@@ -275,6 +258,7 @@ function facebooky_by_weblizar_page_function() {
 	wp_enqueue_style('weblizar-option-style-css', WEBLIZAR_FACEBOOK_PLUGIN_URL .'css/weblizar-option-style.css');
 	wp_enqueue_style('op-bootstrap-css', WEBLIZAR_FACEBOOK_PLUGIN_URL. 'css/bootstrap.min.css');
 	wp_enqueue_style('weblizar-bootstrap-responsive-google', WEBLIZAR_FACEBOOK_PLUGIN_URL .'css/bootstrap-responsive.css');
+	wp_enqueue_style('weblizar-recom', WEBLIZAR_FACEBOOK_PLUGIN_URL .'css/recom.css');
 	wp_enqueue_style('font-awesome-min-css', WEBLIZAR_FACEBOOK_PLUGIN_URL.'css/font-awesome-latest/css/font-awesome.min.css');
 	wp_enqueue_style('Respo-pricing-table-css', WEBLIZAR_FACEBOOK_PLUGIN_URL .'css/pricing-table-responsive.css');
 	wp_enqueue_style('pricing-table-css', WEBLIZAR_FACEBOOK_PLUGIN_URL .'css/pricing-table.css');

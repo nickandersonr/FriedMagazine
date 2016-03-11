@@ -8,6 +8,10 @@
 the_post();
 ?>
 <div class="site-header">
+    <a class="single_home" href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">
+        <?php // bloginfo( 'name' ); ?>
+        <img id="logo" src="<?php echo get_template_directory_uri(); ?>/svg/friedlogo_white.svg" /> 
+    </a>
 	<header class="entry-header">
 		<?php
 			the_title( '<h1 class="entry-title">', '</h1>' );

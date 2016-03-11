@@ -19,6 +19,9 @@ function powerpress_meta_box($object, $box)
 	$iTunesKeywords = '';
 	$iTunesSubtitle = '';
 	$iTunesSummary = '';
+	$GooglePlayDesc = '';
+	$GooglePlayExplicit = '';
+	$GooglePlayBlock = '';
 	$iTunesAuthor = '';
 	$iTunesExplicit = '';
 	$iTunesCC = false;
@@ -90,6 +93,12 @@ function powerpress_meta_box($object, $box)
 					$iTunesSubtitle = $ExtraData['subtitle'];
 				if( isset($ExtraData['summary']) )
 					$iTunesSummary = $ExtraData['summary'];
+				if( isset($ExtraData['gp_desc']) )
+					$GooglePlayDesc = $ExtraData['gp_desc'];
+				if( isset($ExtraData['gp_explicit']) )
+					$GooglePlayExplicit = $ExtraData['gp_explicit'];	
+				if( isset($ExtraData['gp_block']) )
+					$GooglePlayBlock = $ExtraData['gp_block'];
 				if( isset($ExtraData['author']) )
 					$iTunesAuthor = $ExtraData['author'];
 				if( isset($ExtraData['no_player']) )
@@ -188,8 +197,8 @@ function powerpress_meta_box($object, $box)
 			<label for="Powerpress[<?php echo $FeedSlug; ?>][url]"><?php echo __('Media URL', 'powerpress'); ?></label>
 			<div class="powerpress_row_content">
 				<input type="text" id="powerpress_url_<?php echo $FeedSlug; ?>" class="powerpress-url" name="Powerpress[<?php echo $FeedSlug; ?>][url]" value="<?php echo esc_attr($EnclosureURL); ?>" <?php echo ( !empty($ExtraData['hosting']) ?'readOnly':''); ?> style="width: 70%;" />
-				<?php if( !empty($GeneralSettings['blubrry_hosting']) && $GeneralSettings['blubrry_hosting']!=='false' && !empty($GeneralSettings['timestamp']) && $GeneralSettings['timestamp'] <	1414627200 ) { // display the folder icon for folks before october 30, 2014 ?>
-					<a href="<?php echo admin_url('admin.php'); ?>?action=powerpress-jquery-media&podcast-feed=<?php echo $FeedSlug; ?>&KeepThis=true&TB_iframe=true&modal=true" title="<?php echo __('Browse Media File', 'powerpress'); ?>" class="thickbox"><img src="<?php echo powerpress_get_root_url(); ?>/images/blubrry_folder.png" alt="<?php echo __('Browse Media Files', 'powerpress'); ?>" /></a>
+				<?php if( true ) { // NOW ALWAYS SHOW FOLDER, PREVIOUS: if( !empty($GeneralSettings['blubrry_hosting']) && $GeneralSettings['blubrry_hosting']!=='false'  && !empty($GeneralSettings['timestamp']) && $GeneralSettings['timestamp'] <	1414627200 ) { // display the folder icon for folks before october 30, 2014 ?>
+					<a title="<?php echo esc_attr(__('Blubrry Podcast Hosting', 'powerpress')); ?>" href="<?php echo admin_url('admin.php'); ?>?action=powerpress-jquery-media&podcast-feed=<?php echo $FeedSlug; ?>&KeepThis=true&TB_iframe=true&modal=false" title="<?php echo __('Browse Media File', 'powerpress'); ?>" class="thickbox"><img src="<?php echo powerpress_get_root_url(); ?>/images/blubrry_folder.png" alt="<?php echo __('Browse Media Files', 'powerpress'); ?>" /></a>
 				<?php } ?>
 				<input type="button" id="powerpress_check_<?php echo $FeedSlug; ?>_button" name="powerpress_check_<?php echo $FeedSlug; ?>_button" value="<?php echo __('Verify URL', 'powerpress'); ?>" onclick="powerpress_get_media_info('<?php echo $FeedSlug; ?>');" alt="<?php echo __('Verify Media', 'powerpress'); ?>" class="button" />
 				<img id="powerpress_check_<?php echo $FeedSlug; ?>" src="<?php echo admin_url(); ?>images/loading.gif" style="vertical-align:text-top; display: none;" alt="<?php echo __('Checking Media', 'powerpress'); ?>" />
@@ -200,10 +209,10 @@ function powerpress_meta_box($object, $box)
 				</em></div>
 				
 				<div class="powerpress-hosting-buttons">
-					<a class="powerpress-hosting-button powerpress-button thickbox" href="<?php echo admin_url('admin.php'); ?>?action=powerpress-jquery-media&podcast-feed=<?php echo $FeedSlug; ?>&KeepThis=true&TB_iframe=true&modal=true" title="<?php echo __('Link to Media hosted on Blubrry.com', 'powerpress'); ?>" class="thickbox">
-					<img src="<?php echo powerpress_get_root_url(); ?>/images/button_icon_blubrry.png" class="powerpress-button-icon" alt="" />
+					<a class="powerpress-hosting-button powerpress-button thickbox" href="<?php echo admin_url('admin.php'); ?>?action=powerpress-jquery-media&podcast-feed=<?php echo $FeedSlug; ?>&KeepThis=true&TB_iframe=true&modal=false" title="<?php echo esc_attr(__('Blubrry Podcast Hosting', 'powerpress')); ?>" class="thickbox">
+					<img src="<?php echo powerpress_get_root_url(); ?>images/button_icon_blubrry.png" class="powerpress-button-icon" alt="" />
 					<?php echo __('Link to Media hosted on Blubrry.com', 'powerpress'); ?></a> 
-					<!--  <a href="<?php echo admin_url('admin.php'); ?>?action=powerpress-jquery-media&podcast-feed=<?php echo $FeedSlug; ?>&KeepThis=true&TB_iframe=true&modal=true" title="<?php echo __('Upload Media File to your Blubrry.com account', 'powerpress'); ?>" class="thickbox"><?php echo __('Upload Media File', 'powerpress'); ?></a> -->
+					<!--  <a href="<?php echo admin_url('admin.php'); ?>?action=powerpress-jquery-media&podcast-feed=<?php echo $FeedSlug; ?>&KeepThis=true&TB_iframe=true&modal=false" title="<?php echo __('Upload Media File to your Blubrry.com account', 'powerpress'); ?>" class="thickbox"><?php echo __('Upload Media File', 'powerpress'); ?></a> -->
 					<?php if( empty($GeneralSettings['blubrry_hosting']) || $GeneralSettings['blubrry_hosting']==='false' ) { ?>
 						&nbsp; <?php echo __('Don\'t have Blubrry Podcast Media Hosting?', 'powerpress'); ?>	<a href="http://create.blubrry.com/resources/podcast-media-hosting/" target="_blank"><?php echo __('Learn More', 'powerpress'); ?></a>
 					<?php } ?>
@@ -354,7 +363,7 @@ function powerpress_meta_box($object, $box)
 		<div class="powerpress_row">
 			<label for="Powerpress[<?php echo $FeedSlug; ?>][embed]"><?php echo __('Media Embed', 'powerpress'); ?></label>
 			<div class="powerpress_row_content">
-				<textarea class="powerpress-embed" id="powerpress_embed_<?php echo $FeedSlug; ?>" name="Powerpress[<?php echo $FeedSlug; ?>][embed]" style="width: 90%; height: 80px; font-size: 90%;" onfocus="this.select();"><?php echo htmlspecialchars($Embed); ?></textarea>
+				<textarea class="powerpress-embed" id="powerpress_embed_<?php echo $FeedSlug; ?>" name="Powerpress[<?php echo $FeedSlug; ?>][embed]" style="width: 90%; height: 80px; font-size: 90%;" onfocus="this.select();"><?php echo esc_textarea($Embed); ?></textarea>
 			</div>
 		</div>
 <?php
@@ -401,10 +410,28 @@ function powerpress_meta_box($object, $box)
 		<div class="powerpress_row">
 			<label for="Powerpress[<?php echo $FeedSlug; ?>][summary]"><?php echo __('iTunes Summary', 'powerpress'); ?></label>
 			<div class="powerpress_row_content">
-				<textarea id="powerpress_summary_<?php echo $FeedSlug; ?>" name="Powerpress[<?php echo $FeedSlug; ?>][summary]" style="width: 90%; height: 80px; font-size: 90%;"><?php echo htmlspecialchars($iTunesSummary); ?></textarea>
+				<textarea id="powerpress_summary_<?php echo $FeedSlug; ?>" name="Powerpress[<?php echo $FeedSlug; ?>][summary]" style="width: 90%; height: 80px; font-size: 90%;"><?php echo esc_textarea($iTunesSummary); ?></textarea>
 			</div>	
 			<div class="powerpress_row_content">
 				<em><?php echo __('Your summary may not contain HTML and cannot exceed 4,000 characters in length. Leave blank to use your blog post.', 'powerpress'); ?></em>
+			</div>
+		</div>
+<?php
+		}
+		
+		if( !empty($GeneralSettings['episode_box_gp_desc']) || !empty($GeneralSettings['seo_itunes']) || $GooglePlayDesc )
+		{
+?>
+		<div class="powerpress_row">
+			<label for="Powerpress[<?php echo $FeedSlug; ?>][gp_desc]"><?php echo __('Google Play Description', 'powerpress'); ?></label>
+			<div class="powerpress_row_content">
+				<textarea id="powerpress_gp_desc_<?php echo $FeedSlug; ?>" name="Powerpress[<?php echo $FeedSlug; ?>][gp_desc]" style="width: 90%; height: 80px; font-size: 90%;"><?php echo esc_textarea($GooglePlayDesc); ?></textarea>
+			</div>	
+			<div class="powerpress_row_content">
+				<em><?php echo __('Your summary cannot exceed 4,000 characters in length. Leave blank to use your blog post.', 'powerpress'); ?></em>
+				<?php if( !empty($GeneralSettings['seo_itunes']) ) { ?>
+				<em><?php echo __('SEO: This content may be indexed by google in Google Play Music Search. (unconfirmed)', 'powerpress'); ?></em>
+				<?php } ?>
 			</div>
 		</div>
 <?php
@@ -448,6 +475,27 @@ while( list($value,$desc) = each($explicit_array) )
 		</div>
 <?php
 		}
+		
+		if( !empty($GeneralSettings['episode_box_gp_explicit']) || $GooglePlayExplicit )
+		{
+?>
+		<div class="powerpress_row">
+			<label for="Powerpress[<?php echo $FeedSlug; ?>][gp_explicit]"><?php echo __('Google Play Explicit', 'powerpress'); ?></label>
+			<div class="powerpress_row_content">
+				<select id="powerpress_explicit_<?php echo $FeedSlug; ?>" name="Powerpress[<?php echo $FeedSlug; ?>][gp_explicit]" style="width: 220px;">
+<?php
+$explicit_array = array(''=>__('Use feed\'s explicit setting', 'powerpress'), 0=>__('no - display nothing', 'powerpress'), 1=>__('yes - explicit content', 'powerpress') );
+
+while( list($value,$desc) = each($explicit_array) )
+	echo "\t<option value=\"$value\"". ($GooglePlayExplicit==$value?' selected':''). ">$desc</option>\n";
+
+?>
+					</select>
+			</div>	
+		</div>
+<?php
+		}
+		
 		
 		if( !empty($GeneralSettings['episode_box_closed_captioned']) || $iTunesCC )
 		{
@@ -512,6 +560,26 @@ $block_array = array(''=>__('No', 'powerpress'), 1=>__('Yes, Block episode from 
 
 while( list($value,$desc) = each($block_array) )
 	echo "\t<option value=\"$value\"". ($iTunesBlock==$value?' selected':''). ">$desc</option>\n";
+unset($block_array);
+?>
+					</select>
+			</div>	
+		</div>
+<?php
+		}
+		
+		if( !empty($GeneralSettings['episode_box_gp_block']) || $GooglePlayBlock )
+		{
+?>
+		<div class="powerpress_row">
+			<label for="Powerpress[<?php echo $FeedSlug; ?>][gp_block]"><?php echo __('Google Play Block', 'powerpress'); ?></label>
+			<div class="powerpress_row_content">
+				<select id="powerpress_block_<?php echo $FeedSlug; ?>" name="Powerpress[<?php echo $FeedSlug; ?>][gp_block]" style="width: 220px;">
+<?php
+$block_array = array(''=>__('No', 'powerpress'), 1=>__('Yes, Block episode from Google Play Music', 'powerpress') );
+
+while( list($value,$desc) = each($block_array) )
+	echo "\t<option value=\"$value\"". ($GooglePlayBlock==$value?' selected':''). ">$desc</option>\n";
 unset($block_array);
 ?>
 					</select>

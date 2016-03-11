@@ -11,7 +11,7 @@
 		$query = "SELECT meta_id, post_id, meta_key, meta_value FROM {$wpdb->postmeta} WHERE meta_key LIKE \"%enclosure\"";
 		$results_data = $wpdb->get_results($query, ARRAY_A);
 		
-		while( list( $index, $row) = each($results_data) ) //  = mysql_fetch_assoc($results) )
+		while( list( $index, $row) = each($results_data) )
 		{
 			list($url) = @explode("\n", $row['meta_value'], 2 );
 			$url = trim($url);
@@ -29,6 +29,10 @@
 	
 	function powerpressadmin_find_replace_process()
 	{
+		$wp_remote_options = array();
+		$wp_remote_options['user-agent'] = 'Blubrry PowerPress/'.POWERPRESS_VERSION;
+		$wp_remote_options['httpversion'] = '1.1';
+		
 		global $g_FindReplaceResults;
 		if( isset($_POST['FindReplace']) )
 		{
@@ -68,34 +72,34 @@
 						$good = true;
 						if( !empty($FindReplace['verify']) )
 						{
-							$response = wp_remote_head( $new_url, array('httpversion' => 1.1) );
+							$response = wp_remote_head( $new_url, $wp_remote_options );
 							// Redirect 1
 							if( !is_wp_error( $response ) && ($response['response']['code'] == 301 || $response['response']['code'] == 302) )
 							{
 								$headers = wp_remote_retrieve_headers( $response );
-								$response = wp_remote_head( $headers['location'], array('httpversion' => 1.1) );
+								$response = wp_remote_head( $headers['location'], $wp_remote_options );
 							}
 							// Redirect 2
 							if( !is_wp_error( $response ) && ($response['response']['code'] == 301 || $response['response']['code'] == 302) )
 							{
 								$headers = wp_remote_retrieve_headers( $response );
-								$response = wp_remote_head( $headers['location'], array('httpversion' => 1.1) );
+								$response = wp_remote_head( $headers['location'], $wp_remote_options );
 							}
 							// Redirect 3
 							if( !is_wp_error( $response ) && ($response['response']['code'] == 301 || $response['response']['code'] == 302) )
 							{
 								$headers = wp_remote_retrieve_headers( $response );
-								$response = wp_remote_head( $headers['location'], array('httpversion' => 1.1) );
+								$response = wp_remote_head( $headers['location'], $wp_remote_options );
 							}
 							// Redirect 4
 							if( !is_wp_error( $response ) && ($response['response']['code'] == 301 || $response['response']['code'] == 302) )
 							{
 								$headers = wp_remote_retrieve_headers( $response );
-								$response = wp_remote_head( $headers['location'], array('httpversion' => 1.1) );
+								$response = wp_remote_head( $headers['location'], $wp_remote_options );
 							}
 							//$headers = wp_remote_retrieve_headers( $response );
 				
-							//$response = @wp_remote_head( $new_url, array('httpversion' => 1.1) );
+							//$response = @wp_remote_head( $new_url, $wp_remote_options );
 							if ( is_wp_error( $response ) )
 							{
 								$g_FindReplaceResults[ $meta_id ]['error'] = $response->get_error_message();
@@ -225,7 +229,7 @@ dt {
 	<tr valign="top">
 	<th scope="row"><?php echo __("Find in URL", 'powerpress'); ?></th> 
 	<td>
-			<input type="text" id="find_string" name="FindReplace[find_string]" style="width: 50%;" value="<?php echo esc_attr($FindReplace['find_string']); ?>" maxlength="250" <?php if( $FindReplace['step'] != 1 ) { echo ' readOnly'; } ?> />
+			<input type="text" id="find_string" name="FindReplace[find_string]" style="width: 50%;" value="<?php echo esc_attr($FindReplace['find_string']); ?>" maxlength="255" <?php if( $FindReplace['step'] != 1 ) { echo ' readOnly'; } ?> />
 			<?php if( $FindReplace['step'] != 1 ) { ?><a href="#" onclick="jQuery('#replace_step').val('1');jQuery('#replace_step').closest('form').submit();return false;"><?php echo __('Modify', 'powerpress'); ?></a><?php } ?>
 			<p style="margin: 0; font-size: 90%;"><?php echo __('Example', 'powerpress'); ?>: http://www.oldsite.com/</p>
 	</td>
@@ -233,7 +237,7 @@ dt {
 	<tr valign="top">
 	<th scope="row"><?php echo __('Replace with', 'powerpress'); ?></th> 
 	<td>
-			<input type="text" id="replace_string" name="FindReplace[replace_string]" style="width: 50%;" value="<?php echo esc_attr($FindReplace['replace_string']); ?>" maxlength="250" <?php if( $FindReplace['step'] != 1 ) { echo ' readOnly'; } ?> />
+			<input type="text" id="replace_string" name="FindReplace[replace_string]" style="width: 50%;" value="<?php echo esc_attr($FindReplace['replace_string']); ?>" maxlength="255" <?php if( $FindReplace['step'] != 1 ) { echo ' readOnly'; } ?> />
 			<?php if( $FindReplace['step'] != 1 ) { ?><a href="#" onclick="jQuery('#replace_step').val('1');jQuery('#replace_step').closest('form').submit();return false;"><?php echo __('Modify', 'powerpress'); ?></a><?php } ?>
 			<p style="margin: 0; font-size: 90%;"><?php echo __('Example', 'powerpress'); ?>: http://www.newsite.com/</p>
 	</td>

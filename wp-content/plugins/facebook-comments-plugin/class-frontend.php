@@ -27,7 +27,6 @@ add_action('wp_head', 'fbgraphinfo');
 function fbmlsetup() {
 $options = get_option('fbcomments');
 if (!isset($options['fbml'])) {$options['fbml'] = "";}
-if (!isset($options['old_sdk'])) {$options['old_sdk'] = "off";}
 if ($options['fbml'] == 'on') {
 ?>
 <!-- Facebook Comments Plugin for WordPress: http://peadig.com/wordpress-plugins/facebook-comments/ -->
@@ -36,13 +35,7 @@ if ($options['fbml'] == 'on') {
   var js, fjs = d.getElementsByTagName(s)[0];
   if (d.getElementById(id)) return;
   js = d.createElement(s); js.id = id;
-  js.src = "//connect.facebook.net/<?php echo $options['language']; ?>/sdk.js#xfbml=1&appId=<?php echo $options['appID']; ?>&version=v<?php
-  if ($options['old_sdk'] == 'on') {
-  	echo '2.0';
-  } else {
-  	echo '2.3';
-  }
-  ?>";
+  js.src = "//connect.facebook.net/<?php echo $options['language']; ?>/sdk.js#xfbml=1&appId=<?php echo $options['appID']; ?>&version=v2.3";
   fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));</script>
 <?php }}
