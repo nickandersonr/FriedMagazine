@@ -14,6 +14,10 @@
 	<?php endif; ?>
 
 	<div class="entry-content">
+        <h1 class="title_section">
+            <?php echo get_the_title( $post_id ); ?>
+            <hr class="style-eight" />
+        </h1>
 		<?php
 			the_content();
 			wp_link_pages( array(
