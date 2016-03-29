@@ -174,7 +174,7 @@ if ( ! function_exists( 'bushwick_posted_on' ) ) :
  * Prints HTML with meta information for the current post-date/time and author.
  */
 function bushwick_posted_on() {
-	printf( __( ' By <a href="%1$s" title="%2$s" rel="bookmark"><span class="byline"><span class="author vcard"><a class="url fn n" href="%5$s" title="%6$s" rel="author">%7$s</a></span></span>.', 'bushwick' ),
+	printf( __( ' <a href="%1$s" title="%2$s" rel="bookmark"><span class="byline"><span class="author vcard"><a class="url fn n" href="%5$s" title="%6$s" rel="author">%7$s</a></span></span>', 'bushwick' ),
 		esc_url( get_permalink() ),
 		esc_attr( get_the_time() ),
 		esc_attr( get_the_date( 'c' ) ),

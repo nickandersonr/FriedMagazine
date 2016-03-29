@@ -14,14 +14,20 @@ p {
 
 
 body, button, input, select, textarea {
-    color: #33473d;
+    color: #1f232b;
     font: 400 0.75rem/1.5 "Lato","proxima-nova","Helvetica Neue Light","Helvetica Neue","Helvetica","Arial",sans-serif;
 }
 
 h1, h2, h3, h4, h5, h6 {
-    color: #33473d;
+    color: #1f232b;
     clear: both;
     font: 300 2.2rem/1.5 'Lato',"Skolar","ff-tisa-web-pro","Georgia",serif;
+}
+a {
+    font-weight: 500;
+}
+.single #main {
+    max-width: 700px;
 }
 
 
@@ -34,7 +40,7 @@ h1, h2, h3, h4, h5, h6 {
 .navigation-main .current-menu-item.home-link > a, .navigation-main .current_page_item.home-link > a, .featured-image .navigation-main .home-link > a, body:not(.single) .home-link > a:hover {
     color: inherit;
 }
-.navigation-main li.home-link {
+.menuli.home-link {
     left: 0;
     position: static;
     top: 0;
@@ -43,8 +49,9 @@ body:not(.single) .home-link > a {
     text-shadow: none;
 }
 .menu-toggle, .navigation-main .widget-handle {
-    position: relative;
+    position: absolute;
     right: 24px;
+    top: 54px;
     color: #68adc3;
 }
 .single .entry-header {
@@ -70,7 +77,14 @@ body:not(.single) .home-link > a {
     padding: 3.5em;
     position: absolute;
 }
-.navigation-main .menu, .navigation-main .nav-menu {
+
+.navigation-main {
+    margin: 0 0 2em;
+}
+#secondary .widget_nav_menu {
+    width: 100%;
+}
+ .menu, .nav-menu {
     float: left;
     width: 95%;
     width: -webkit-calc(100% - 1.3rem);
@@ -79,10 +93,32 @@ body:not(.single) .home-link > a {
     position: relative;
     left: 8px;
 }
-.navigation-main li:hover > a {
-    border-bottom: 5px solid #68adc3;
-    color: #33473d;
+.menu li {
+    float: left;
+    display: inline-block;
+    font-size: 0.6875rem;
+    font-weight: 900;
+    margin-bottom: 0em;
+    margin-right: 1.5em;
+    padding-bottom: 0.25em;
+    position: relative;
+    text-transform: uppercase;
 }
+.menu li a {
+    border-bottom: 5px solid transparent;
+    color: #1f232b;
+    display: block;
+    text-decoration: none;
+    font-weight: 600;
+    margin-top: 4px;
+}
+.menu li:hover > a {
+    border-bottom: 5px solid #68adc3;
+    color: #1f232b;
+}
+
+
+
 
 
 .entry-permalink {
@@ -98,7 +134,7 @@ body:not(.single) .home-link > a {
 
 .navigation-main a {
     border-bottom: 5px solid transparent;
-    color: #33473d;
+    color: #1f232b;
     display: block;
     text-decoration: none;
     font-weight: 600;
@@ -134,7 +170,7 @@ body:not(.archive):not(.search) .hentry:first-of-type + .entry-preview, .archive
 
 .home article.entry-preview {
     float: left;
-    width: 41%;
+    width: 43%;
     padding: 20px;
 }
 
@@ -152,12 +188,12 @@ body:not(.archive):not(.search) .hentry:first-of-type + .entry-preview, .archive
     line-height: .8;
 }
 .entry-title, .entry-title a {
-    color: #33473d;
+    color: #1f232b;
     font-weight: 400;
     font-size: 18px;
 }
 .entry_info {
-    min-height: 116px;
+    min-height: 130px;
 }
 .entry-preview img {
     height: 425px;
@@ -188,19 +224,28 @@ body:not(.archive):not(.search) .hentry:first-of-type + .entry-preview, .archive
     width: 30%;
 }
 .single .entry-title, .page .entry-title, .site-header .post-navigation a {
-    color: #33473d;
-    font-weight: 700;
+    color: #1f232b;
+    font-weight: 500;
 }
 
 .title_section {
-    font-weight: 900;
+    font-weight: 700;
     text-align: center;
     line-height: 1.3;
+    margin-bottom: 1em;
 }
+
+.page_author a {
+    color: #1f232b;
+    font-size: .6em;
+    font-weight: 300;
+    font-style: italic;
+}
+
 .title_section hr {
     margin: 40px 0;
     font-size: 12px;
-    color: #33473d;
+    color: #1f232b;
 }
 /* Glyph, by Harry Roberts */
 hr.style-seven {
@@ -223,8 +268,8 @@ hr.style-seven:before { /* Not really supposed to work, but does */
 hr.style-eight {
     padding: 0;
     border: none;
-    border-top: medium double #33473d;
-    color: #33473d;
+    border-top: medium double #1f232b;
+    color: #1f232b;
     text-align: center;
 }
 hr.style-eight:after {
@@ -240,7 +285,38 @@ hr.style-eight:after {
 blockquote {
     border-left: 5px solid #68adc3;
 }
+footer.entry-meta {
+    font-style: italic;
+}
+footer.entry-meta a {
+    color: #1f232b;
+    font-size: 1.3em;
+    font-weight: 300;
+}
+.post-edit-link {
+    display: none;
+}
 
+.post .entry-meta {
+    border-top: 1px solid #CCC;
+    padding-top: 40px;
+}
+.entry-preview .entry-meta {
+    border-top: none;
+    padding-top: 0px;
+    font-size: 18px;
+    line-height: 1.3;
+    display: block;
+    margin-top: 10px;
+}
+.post .entry-meta,
+.post .entry-meta a {
+    font-weight: 300;
+    font-size: 1em;
+}
+.single .post .entry-meta {
+    font-size: .8em;
+}
 
 
 /*  ------------ Media Queries
@@ -266,9 +342,24 @@ blockquote {
 }
 
 
-@media (min-width: 767px) and (max-width: 1150px) {
+@media (min-width: 767px) and (max-width: 1023px) {
     .home article.entry-preview {
-        width: 100%;
+        width: 43%;
     }
 }
-
+@media (min-width: 1024px) and (max-width: 1025px) {
+    .site-main {
+        width: 100%;
+    }
+    .home article.entry-preview {
+        width: 40%;
+    }
+    .entry_info {
+        min-height: 154px;
+    }
+}
+@media (min-width: 1360px) {
+    #main {
+        max-width: 700px;
+    }
+}
